@@ -1,8 +1,8 @@
-#Javascript_Project
+# Javascript_Project
 
-##Simulador de e-commerce
+## Simulador de e-commerce
 
-####Primer entrega
+#### Primer entrega
 - Se incluye un documento básico de HTML, sin estilos ni maquetado;
 - Se trabajarán sobre tres constantes y cada una de ellas contiene lo siguiente:
 	- Products: id, name, price, stock, categoryId --> Cada producto formará parte de una categoría;

@@ -7,13 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="bienvenido">Titulo</h1>
-    <p>Simulador de e-commerce. <br>
-        Incluirá categorías de productos. 
-        Cada producto tendrá id, nombre, descripcion, precio y stock. <br>
-        Se van a poder agregar a un carrito, eliminarlos del carrito y sumar más de un mismo producto desde el carrito <br>
-        Incluirá un checkout donde se podrá elegir el medio de pago y el envío.<br>
-        Se puede agregar un codigo de descuento o algunos poductos pueden estar en descuento, lo que se mostrará al final del checkout. </p>
+    <h1 id="titulo">Simulador de e-commerce</h1>
+    <h2>Primer entrega</h2>
+    <p> - Se incluye un documento básico de HTML, sin estilos ni maquetado;<br>
+        - Se trabajarán sobre tres constantes y cada una de ellas contiene lo siguiente:<br>
+            * Products: id, name, price, stock, categoryId. Cada producto formará parte de una categoría;<br>
+            * Categories: id, name. En referencia a las categorías que puede tener un producto;<br>
+            * Cart : Array que contendrá los precios de los productos por la cantidad elegida.<br>
+        - El usuario puede elegir una categoría desde un prompt, lo que mostrará los productos bajo esa categoría.<br>
+        Si el ID de categoría no es válido, se muestra una alerta y se vuelve a mostrar el prompt de categorías;
+        - El usuario puede elegir un producto de los disponibles para su categoría mediante un prompt. <br>
+        Si el ID de producto no es válido, se muestra una alerta y se vuelve a mostrar el prompt de productos;<br>
+        - El usuario ingresa la cantidad de productos mediante un prompt. Debe ser un valor válido (distinto de 0, no caracter alfabético ni especial, e igual o menor al stock disponible);<br>
+        - A medida que el usuario agregue productos al carrito, se disminuirá el stock disponible;<br>
+        - Después de agregar un producto, un prompt de confimación permite agregar otros productos.<br>
+        - Si el usuario acepta, se lo redirige al prompt de categorías;<br>
+        - Si el usuario no acepta, se muestra en una alerta el total del carrito y finaliza el flujo. </p>
     <script src="./js/app.js"></script>
 </body>
 </html>
