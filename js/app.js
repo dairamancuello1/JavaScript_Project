@@ -125,10 +125,6 @@ function getProductById(id) {
     return products.find(product => id === product.id);
 }
 
-function getProductsByCategory (categoryId) {
-    return products.filter(product => categoryId === product.categoryId);
-}
-
 function listCategoriesConsole() {
     console.log ('Lista de categorias:');
     for (let i = 0; i < categories.length; i++) {
