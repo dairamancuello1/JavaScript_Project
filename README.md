@@ -2,7 +2,27 @@
 
 ## Simulador de e-commerce
 
-#### Primer entrega
+Este proyecto es un simulador básico de un e-commerce que permite a los usuarios seleccionar categorías de productos, elegir productos dentro de esas categorías y agregar cantidades específicas al carrito de compras. Todo esto se gestiona a través de prompts en el navegador.
+
+### Instrucciones
+
+#### Pasos para ejecutar el proyecto
+**1. Clonar el repositorio**
+	Abre tu terminal y ejecuta:
+	`git clone https://github.com/dairamancuello1/JavaScript_Project.git`
+	Luego, navega al directorio del proyecto:
+	`cd JavaScript_Project`
+
+**2. Abrir el archivo `index.html` en el navegador**
+Dado que este proyecto es estático y no requiere un servidor backend, se puede abrir directamente el archivo `index.html` en tu navegador web o desde el editor de código usando Live Server.
+
+**3. Interacción con la aplicación**
+Una vez que la página esté abierta en el navegador, la aplicación te guiará a través de una serie de prompts para:
+	- Seleccionar una categoría de productos.
+	- Elegir un producto dentro de la categoría seleccionada.
+	- Especificar la cantidad deseada del producto.
+
+### Primer entrega
 - Se incluye un documento básico de HTML, sin estilos ni maquetado;
 - Se trabajarán sobre tres constantes y cada una de ellas contiene lo siguiente:
 	- Products: id, name, price, stock, categoryId --> Cada producto formará parte de una categoría;
