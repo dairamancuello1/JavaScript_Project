@@ -9,9 +9,9 @@ Este proyecto es un simulador básico de un e-commerce que permite a los usuario
 #### Pasos para ejecutar el proyecto
 **1. Clonar el repositorio**  
 
-	Abre tu terminal y ejecuta:
-	`git clone https://github.com/dairamancuello1/JavaScript_Project.git`
-	Luego, navega al directorio del proyecto:
+	Abre tu terminal y ejecuta:  
+	`git clone https://github.com/dairamancuello1/JavaScript_Project.git`  
+	Luego, navega al directorio del proyecto:  
 	`cd JavaScript_Project`
 
 **2. Abrir el archivo `index.html` en el navegador**  
