@@ -2,20 +2,9 @@ function getCategoryId () {
     const urlParams = new URLSearchParams(window.location.search);
     return parseInt(urlParams.get('categoryId'));
 } 
-// retorna el numero de categoria --> tengo el numero de categoria
-
-function getCategory() {
-    const categoryId = getCategoryId();
-    return products.find(product => product.categoryId === categoryId);
-} 
-//retorna un array de productos que coincidan con la categoria 
-// ---> tengo los productos de esa categoria
-
-// me falta listarlos
 
 function createShopByCategory(products, productList) {
     const categoryNumber = getCategoryId();
-    // Removed redundant declaration of products
     products.forEach(product => {
         if (product.categoryId === categoryNumber) {
 
