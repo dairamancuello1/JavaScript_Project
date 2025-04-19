@@ -18,7 +18,7 @@ function createItem(item, itemSection) {
 
         itemSection.classList.add('col', 'mb-5')
         itemSection.innerHTML = `
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="img/${item.name}.jpg" alt="..." /></div>
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder">${item.name}</h1>
                         <div class="fs-5 mb-5">
