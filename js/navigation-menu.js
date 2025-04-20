@@ -52,10 +52,12 @@ function createMenuContent(hostElement) {
                 </ul>
 
                 <a href="/cart.html">
-                    <button class="btn btn-outline-dark" href="/cart.html">
+                    <button class="btn btn-outline-dark" 
+                    href="/cart.html"
+                    id="cartButton">
                         <i class="bi-cart-fill me-1"></i>
                             Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        <span class="badge bg-dark text-white ms-1 rounded-pill" id="badge"><span>0</span></span>
                     </button>
                 </a>
             </div>

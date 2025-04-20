@@ -36,7 +36,8 @@ function createShopByCategory(products, productList) {
                             Ver
                         </a>
                         <button 
-                            class="btn btn-dark mt-auto">
+                            class="btn btn-dark mt-auto addToCart"
+                            data-product-id="${product.id}">
                             Agregar
                         </button>
                     </div>
