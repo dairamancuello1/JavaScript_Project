@@ -34,7 +34,6 @@ Una vez que la página esté abierta en el navegador, la aplicación te guiará 
 	- Products: id, name, price, stock, categoryId --> Cada producto formará parte de una categoría;
 	- Categories: id, name --> En referencia a las categorías que puede tener un producto;
 	- Cart: productId, quantity --> Contendrá el id del producto y la cantidad del mismo.
-- Para propósitos de esta entrega, el input numérico en item.html que hace referencia a la cantidad de productos, no se toma en cuenta. Se implementará en futuras entregas.
 - El usuario será dirigido primeramente al index.html, que contiene la landing page de la página.
 - En la landing page, se muestran las categorías de productos junto a un botón que mostrará sólo los productos bajo esa categoría.
 - El botón "Shop All" en la barra de navegación muestra todos los productos de todas las categorías.
