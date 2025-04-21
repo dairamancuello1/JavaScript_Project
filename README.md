@@ -25,6 +25,29 @@ Una vez que la página esté abierta en el navegador, la aplicación te guiará 
 	- Elegir un producto dentro de la categoría seleccionada.
 	- Especificar la cantidad deseada del producto.
 
+### Segunda entrega
+
+- Se incluyen los documentos HTML necesarios para el funcionamiento de la página, interacción con el DOM y uso del localStorage.
+- Los estilos y maquetado fueron extraídos de un template de Boostrap y modificados a necesidad.
+- Parte del HTML se generará de manera dinámica desde los archivos .js correspondientes.
+- Se trabajarán sobre tres constantes y cada una de ellas contiene lo siguiente:
+	- Products: id, name, price, stock, categoryId --> Cada producto formará parte de una categoría;
+	- Categories: id, name --> En referencia a las categorías que puede tener un producto;
+	- Cart: productId, quantity --> Contendrá el id del producto y la cantidad del mismo.
+- Para propósitos de esta entrega, el input numérico en item.html que hace referencia a la cantidad de productos, no se toma en cuenta. Se implementará en futuras entregas.
+- El usuario será dirigido primeramente al index.html, que contiene la landing page de la página.
+- En la landing page, se muestran las categorías de productos junto a un botón que mostrará sólo los productos bajo esa categoría.
+- El botón "Shop All" en la barra de navegación muestra todos los productos de todas las categorías.
+- En ambos casos, el botón "Ver", redirigirá a una página específica de producto (item.html).
+- Los botones "Agregar" y "Agregar al carrito" agregarán al carrito una unidad del producto. Pueden agregarse más de una unidad si se clickea más de una vez el botón de agregar al carrito desde cualquiera de sus páginas.
+- Los ítems del carrito se guardarán en localStorage.
+- La cantidad total de ítems en el carrito se muestra en el ícono de "Cart" en la barra de navegación y se actualizará a medida que se sumen o quiten productos del carrito.
+- Clickeando en el botón de "Cart", el usuario será redirigido a la página de carrito, cart.html.
+- En cart.html se mostrarán todos los ítems agregados de la siguiente manera: imagen, nombre, cantidad, precio unitario.
+- Se podrá eliminar la totalidad de un item clickeando el ícono de basurero correspondiente.
+- En cart.html se mostrará el total de la compra de manera dinámica. Si se eliminan o suman productos, ésta se actualizará.
+
+
 ### Primer entrega
 - Se incluye un documento básico de HTML, sin estilos ni maquetado;
 - Se trabajarán sobre tres constantes y cada una de ellas contiene lo siguiente:
