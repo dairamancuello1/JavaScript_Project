@@ -1,8 +1,6 @@
 const utilities = {};
 
 class Modal {
-    constructor() {}
-
     show(title, message) {
         return new Promise((resolve) => {
             const id = `modalMessage-${new Date().getTime()}`;
@@ -81,6 +79,15 @@ class Modal {
     }
 }
 
+class Numbers {
+    getCurrencyFormat(value) {
+        return new Intl.NumberFormat('es-AR', {
+            style: 'currency',
+            currency: 'ARS'
+        }).format(value);
+    }
+}
+
 class Toast {
     constructor() {
         this.createContainerElement();
@@ -155,6 +162,7 @@ class Toast {
 
 function initializeUtilities() {
     utilities.modal = new Modal();
+    utilities.numbers = new Numbers();
     utilities.toast = new Toast();
 }
 

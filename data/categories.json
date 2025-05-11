@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Merch",
+        "img": "img/merch.jpg",
+        "description": "Artículos promocionales y de colección."
+    },
+    {
+        "id": 2,
+        "name": "Vinilos",
+        "img": "img/vinilos.jpg",
+        "description": "Discos de vinilo para los amantes de la música clásica y moderna."
+    },
+    {
+        "id": 3,
+        "name": "CDs",
+        "img": "img/cds.jpg",
+        "description": "Discos compactos con tus álbumes favoritos."
+    }
+]

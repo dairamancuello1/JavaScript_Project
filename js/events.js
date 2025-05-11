@@ -1,6 +1,5 @@
-function eventButtons() {
+function addToCartButtonsEvents() {
     const addToCartButtons = document.getElementsByClassName('addToCart');
-    const removeFromCartButtons = document.getElementsByClassName('removeFromCart');
 
     Array.from(addToCartButtons).forEach(button => {
         button.addEventListener('click', () => {
@@ -10,6 +9,10 @@ function eventButtons() {
             addToCart(productId,quantity);
         });
     });
+}
+
+function removeFromCartCartButtonsEvents() {
+    const removeFromCartButtons = document.getElementsByClassName('removeFromCart');
 
     Array.from(removeFromCartButtons).forEach(button => {
         button.addEventListener('click', () => {
@@ -19,5 +22,3 @@ function eventButtons() {
         });
     });
 }
-
-eventButtons();

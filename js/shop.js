@@ -1,9 +1,26 @@
-function initializeShop (){
-    const products = getProducts();
-    const productList = document.getElementById ('productList');
+async function initializeShop (){
+    try {
+        const categoryId = getCategoryId();        
+        const products = categoryId 
+            ? await getProductsByCategory(categoryId)
+            : await getProducts();
+        const productList = document.getElementById('productList');
 
-    createShopItems(productList, products);
+        createShopItems(productList, products);
+    }
+    catch(error) {
+        utilities.toast.show(
+            'Error',
+            'Error al cargar los productos',
+        );
+    }
+} 
 
+function getCategoryId () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryId = parseInt(urlParams.get('categoryId'));
+
+    return !isNaN(categoryId) ? categoryId : undefined;
 } 
 
 function createShopItems(productList, products) {
@@ -16,15 +33,15 @@ function createShopItems(productList, products) {
             <div class="ratio ratio-1x1 overflow-hidden">
                 <img 
                 class="card-img-top object-fit-cover w-100 h-100" 
-                src="img/${product.name}.jpg" 
-                alt="${product.name}" 
+                src="${product.img}" 
+                alt="${product.description}"
                 style="aspect-ratio: 1 / 1; object-fit: cover;"
                 />
             </div>
             <div class="card-body p-4">
                 <div class="text-center">
                 <h5 class="fw-bolder">${product.name}</h5>
-                <p class="text-muted mb-0">$${product.price.toFixed(2)}</p>
+                <p class="text-muted mb-0">${utilities.numbers.getCurrencyFormat(product.price)}</p>
                 </div>
             </div>
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -48,9 +65,8 @@ function createShopItems(productList, products) {
 
         productList.appendChild(productDiv);
     });
+
+    addToCartButtonsEvents();
 }
 
-initializeShop ();
-
-
-
+initializeShop();

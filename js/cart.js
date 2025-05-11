@@ -19,7 +19,8 @@ function getCart() {
     return [];
 }
 
-function addToCart(productId, quantity) {
+async function addToCart(productId, quantity) {
+    const products = await getProducts();
     const cart = getCart();
     const product = products.find(product => product.id === productId);
     const productInCart = cart.find(product => productId === product.productId);
@@ -43,6 +44,7 @@ function addToCart(productId, quantity) {
 }
 
 async function removeFromCart(productId) {
+    const products = await getProducts();
     const cart = getCart(); 
     const productInCartIndex = cart.findIndex(product => productId === product.productId);
     const product = products.find(product => product.id === productId);
@@ -61,7 +63,7 @@ async function removeFromCart(productId) {
 
         removeFromDOM(productId);
 
-        calculateTotal(cart, getProducts());
+        calculateTotal(cart, await getProducts());
 
         utilities.toast.show(
             'Producto Eliminado!',
@@ -79,9 +81,9 @@ function removeFromDOM(productId) {
 }
 
 // inicializar el carrito
-function initializeCart() {
+async function initializeCart() {
     const cart = getCart();
-    const products = getProducts();
+    const products = await getProducts();
 
     updateCartBadge();
 
@@ -92,7 +94,6 @@ function initializeCart() {
     }
 }
 
-// crear un item del carrito y mostrar el total
 function createCartItem(cart, cartItem, products) {
     cart.forEach(item => {
         const product = products.find(product => product.id === item.productId);
@@ -103,7 +104,7 @@ function createCartItem(cart, cartItem, products) {
             cartDiv.id = `cartItem${product.id}`;
 
             cartDiv.innerHTML = `
-                <div class="mr-1"><img class="rounded" src="img/${product.name}.jpg" width="70"></div>
+                <div class="mr-1"><img class="rounded" src="${product.img}" width="70"></div>
                 <div class="d-flex flex-column align-items-center product-details">
                     <span class="font-weight-bold">${product.name}</span>
                 </div>
@@ -113,7 +114,7 @@ function createCartItem(cart, cartItem, products) {
                     <i class="fa fa-plus text-success"></i>
                 </div>
                 <div>
-                    <h5 class="text-grey">$${product.price.toFixed(2)}</h5>
+                    <h5 class="text-grey">${utilities.numbers.getCurrencyFormat(product.price)}</h5>
                 </div>
                 <div class="d-flex align-items-center">
                     <button
@@ -128,6 +129,8 @@ function createCartItem(cart, cartItem, products) {
             cartItem.appendChild(cartDiv);
         }
     });
+
+    removeFromCartCartButtonsEvents();
 }
 
 function calculateTotal(cart, products) {
@@ -147,7 +150,7 @@ function calculateTotal(cart, products) {
 function showTotal (total){
     const totalDiv = document.getElementById ('totalCart');
     totalDiv.innerHTML =`
-    Total del carrito: $${total}
+    Total del carrito: ${utilities.numbers.getCurrencyFormat(total)}
     `
 }
 

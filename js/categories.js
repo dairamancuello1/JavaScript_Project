@@ -1,27 +1,16 @@
-const categories = [
-    {
-        id: 1,
-        name: 'Merch'
-    },
-    {
-        id: 2,
-        name: 'Vinilos'
-    },
-    {
-        id: 3,
-        name: 'CDs'
+async function initializeCategories (){
+    try {
+        const totalCategories = await getCategories();
+        const categoriesList = document.getElementById('categories');
+    
+        createCategoryCard (categoriesList, totalCategories);
     }
-];
-
-function getCategories() {
-    return categories;
-}
-
-function initializeCategories (){
-    const totalCategories = getCategories();
-    const categoriesList = document.getElementById ('categories');
-
-    createCategoryCard (categoriesList, totalCategories);
+    catch(error) {
+        utilities.toast.show(
+            'Error',
+            'Error al cargar las categorías'
+        );
+    }
 } 
 
 function createCategoryCard(categoriesList, categories) {
@@ -32,7 +21,7 @@ function createCategoryCard(categoriesList, categories) {
         categoriesDiv.innerHTML = `
             <div class="card h-100">
                 <!-- Product image-->
-                <img class="card-img-top" src="img/${category.name}.jpg" alt="..." />
+                <img class="card-img-top" src="${category.img}" alt="${category.description}" />
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
@@ -43,7 +32,7 @@ function createCategoryCard(categoriesList, categories) {
                 <!-- Product actions-->
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
-                        <a class="btn btn-outline-dark mt-auto" href="/shop-by-category.html?categoryId=${category.id}">
+                        <a class="btn btn-outline-dark mt-auto" href="/shop.html?categoryId=${category.id}">
                             Ver más
                         </a>
                     </div>
