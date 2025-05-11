@@ -1,0 +1,23 @@
+{
+  "name": "javascript_curso",
+  "version": "0.0.0",
+  "description": "## Simulador de e-commerce",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=5000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dairamancuello1/JavaScript_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dairamancuello1/JavaScript_Project/issues"
+  },
+  "homepage": "https://github.com/dairamancuello1/JavaScript_Project#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
