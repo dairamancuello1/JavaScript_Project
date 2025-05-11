@@ -20,7 +20,8 @@ function getCart() {
 }
 
 function addToCart(productId, quantity) {
-    const cart = getCart(); 
+    const cart = getCart();
+    const product = products.find(product => product.id === productId);
     const productInCart = cart.find(product => productId === product.productId);
 
     if (productInCart) {
@@ -32,17 +33,26 @@ function addToCart(productId, quantity) {
         });
     }
 
-    localStorage.setItem('cart', JSON.stringify(cart)); 
-    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    utilities.toast.show(
+        'Producto Agregado!',
+        `Agregaste ${quantity} unidades de <strong>${product.name}</strong> al carrito`
+    );
+
     updateCartBadge();
 }
 
-function removeFromCart(productId) {
+async function removeFromCart(productId) {
     const cart = getCart(); 
     const productInCartIndex = cart.findIndex(product => productId === product.productId);
-    
+    const product = products.find(product => product.id === productId);
 
-    if (productInCartIndex !== -1) {
+    const result = await utilities.modal.show(
+        'Eliminar Producto',
+        'Estas seguro de eliminar este item del carrito?'
+    );
+
+    if (result && productInCartIndex !== -1) {
         cart.splice(productInCartIndex, 1);
 
         localStorage.setItem('cart', JSON.stringify(cart)); 
@@ -52,6 +62,11 @@ function removeFromCart(productId) {
         removeFromDOM(productId);
 
         calculateTotal(cart, getProducts());
+
+        utilities.toast.show(
+            'Producto Eliminado!',
+            `Eliminaste todos los items de <strong>${product.name}</strong> al carrito`
+        );
     }
 }
 

@@ -1,4 +1,3 @@
-//funcion que devuelve el id del producto que clickee
 function eventButtons() {
     const addToCartButtons = document.getElementsByClassName('addToCart');
     const removeFromCartButtons = document.getElementsByClassName('removeFromCart');
@@ -7,22 +6,18 @@ function eventButtons() {
         button.addEventListener('click', () => {
             const productId = parseInt(button.getAttribute('data-product-id'));
             const quantity = 1;
+
             addToCart(productId,quantity);
-        })
-    })
+        });
+    });
 
     Array.from(removeFromCartButtons).forEach(button => {
         button.addEventListener('click', () => {
             const productId = parseInt(button.getAttribute('data-product-id'));
 
             removeFromCart(productId);
-        })
-    })
+        });
+    });
 }
-
-
-
-
-
 
 eventButtons();
