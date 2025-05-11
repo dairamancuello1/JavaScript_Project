@@ -4,7 +4,7 @@
   "description": "## Simulador de e-commerce",
   "main": "index.js",
   "scripts": {
-    "start": "live-server --port=5000",
+    "start": "live-server --port=5050",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +17,10 @@
     "url": "https://github.com/dairamancuello1/JavaScript_Project/issues"
   },
   "homepage": "https://github.com/dairamancuello1/JavaScript_Project#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1"
+  },
   "devDependencies": {
     "live-server": "^1.2.2"
   }
