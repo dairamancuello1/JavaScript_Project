@@ -1,8 +1,8 @@
-# Javascript_Project
+# ProyectoFinalMancuello
 
 ## Simulador de e-commerce
 
-Este proyecto es un simulador básico de un e-commerce que permite a los usuarios seleccionar categorías de productos, elegir productos dentro de esas categorías y agregar cantidades específicas al carrito de compras. Todo esto se gestiona a través de prompts en el navegador.
+Este proyecto es un simulador básico de un e-commerce que permite a los usuarios seleccionar categorías de productos, elegir productos dentro de esas categorías y agregar productos al carrito de compras.
 
 ### Instrucciones
 
@@ -10,20 +10,31 @@ Este proyecto es un simulador básico de un e-commerce que permite a los usuario
 **1. Clonar el repositorio**  
 
 Abre tu terminal y ejecuta:  
-`git clone https://github.com/dairamancuello1/JavaScript_Project.git`  
+`git clone https://github.com/dairamancuello1/ProyectoFinalMancuello.git`  
 Luego, navega al directorio del proyecto:  
-`cd JavaScript_Project`
+`cd ProyectoFinalMancuello`
 
-**2. Abrir el archivo `index.html` en el navegador**  
+**2. Instalar Dependencias**  
 
-Dado que este proyecto es estático y no requiere un servidor backend, se puede abrir directamente el archivo `index.html` en tu navegador web o desde el editor de código usando Live Server.
+Ejecuta el comando `npm install` en tu terminal para que se instalen todas las dependencias requeridas del proyecto.
 
-**3. Interacción con la aplicación**  
+**3. Ejecutar el proyecto**
 
-Una vez que la página esté abierta en el navegador, la aplicación te guiará a través de una serie de prompts para:
-	- Seleccionar una categoría de productos.
-	- Elegir un producto dentro de la categoría seleccionada.
-	- Especificar la cantidad deseada del producto.
+Ejecuta el comando `npm start`en tu terminal para abrir la página web.
+El proyecto se va a abrir automaticamente en el puerto 127.0.0.1:5050 o en el que estê disponible.
+
+### Entrega Final
+
+- Se agregó el paquete de npm live-server como dev-dependency para reemplazar el uso del plugin de Visual Studio Code.
+Link al paquete de npm `https://www.npmjs.com/package/live-server`.
+- Se instalaron Boostrap y Bootstrap-icons como dependencias, reemplazando el uso de la libreria desde el CDN por el uso de un archivo localmente administrado por npm.
+- Se eliminó el file "styles.css" que contenía estilos de Bootstrap descargados desde el CDN.
+- Se agregó el uso de toasts para acciones del carrito: agregar un producto y eliminar un producto.
+- Se agregó un modal de confirmación al eliminar un producto del carrito.
+- La información de la página se migró a archivos JSON y la obtención de los datos se realiza mediante la función `fetch()`.
+- Se agregó el uso de clases, funciones asíncronas y manejo de errores.
+- El flujo básico de interacción con la página se mantiene respecto a la entrega anterior.
+
 
 ### Segunda entrega
 
